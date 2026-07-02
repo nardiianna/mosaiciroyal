@@ -1,8 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "service-page-hero",
       "settings": {
+        "image": "shopify://shop_images/imgi_5_photo-1577744264009-eafc1067be78_1abe0a35-8be1-4399-9f7c-297e8f046504.jpg",
         "heading": "Disegno e Progettazione",
         "height": 420,
         "overlay_opacity": 40
@@ -13,8 +23,9 @@
       "settings": {
         "intro_text": "La progettazione è il cuore di ogni grande mosaico. Trasformiamo idee e concetti in disegni dettagliati che guidano la realizzazione dell'opera",
         "image_position": "right",
-        "image_width": 4,
-        "image_radius": 4,
+        "image": "shopify://shop_images/imgi_6_photo-1643567290149-44cf808cc0bb.jpg",
+        "image_width": 5,
+        "image_radius": 2,
         "heading": "Dal Concetto al Capolavoro",
         "text_1": "Il nostro team di designer specializzati lavora a stretto contatto con te per comprendere la tua visione e tradurla in un progetto concreto. Ogni dettaglio viene studiato con cura per garantire un risultato finale impeccabile.",
         "text_2": "Utilizziamo strumenti di progettazione all'avanguardia combinati con tecniche tradizionali di disegno, per creare bozzetti accurati che mostrano esattamente come sarà il mosaico finale."
@@ -56,7 +67,12 @@
           }
         }
       },
-      "block_order": ["s1", "s2", "s3", "s4"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
       "settings": {
         "title": "Il Processo di Progettazione"
       }
@@ -79,7 +95,10 @@
           }
         }
       },
-      "block_order": ["c1", "c2"],
+      "block_order": [
+        "c1",
+        "c2"
+      ],
       "settings": {
         "columns": "2"
       }
@@ -94,5 +113,11 @@
       }
     }
   },
-  "order": ["hero", "split", "steps", "cards", "cta"]
+  "order": [
+    "hero",
+    "split",
+    "steps",
+    "cards",
+    "cta"
+  ]
 }
