@@ -1,8 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "service-page-hero",
       "settings": {
+        "image": "shopify://shop_images/imgi_5_photo-1643567397184-4a2b08f01d45.jpg",
         "heading": "Personalizzazione",
         "height": 420,
         "overlay_opacity": 50
@@ -12,6 +22,7 @@
       "type": "service-page-split",
       "settings": {
         "intro_text": "Creiamo mosaici completamente personalizzati secondo le tue esigenze, trasformando le tue idee in opere d'arte uniche e irripetibili",
+        "image": "shopify://shop_images/imgi_6_photo-1581190350425-3a173453cadc.jpg",
         "image_width": 4,
         "image_radius": 4,
         "heading": "Il Tuo Mosaico su Misura",
@@ -65,7 +76,14 @@
           }
         }
       },
-      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"],
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
       "settings": {
         "title": "Cosa Offriamo"
       }
@@ -80,5 +98,10 @@
       }
     }
   },
-  "order": ["hero", "split", "features", "cta"]
+  "order": [
+    "hero",
+    "split",
+    "features",
+    "cta"
+  ]
 }
