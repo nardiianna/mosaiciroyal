@@ -18,7 +18,7 @@
           "type": "nav_link",
           "settings": {
             "label": "Home",
-            "url": "/"
+            "url": "shopify://collections/frontpage"
           }
         },
         "nav_catalog": {
@@ -32,14 +32,14 @@
           "type": "nav_link",
           "settings": {
             "label": "Chi Siamo",
-            "url": "/pages/chi-siamo"
+            "url": "shopify://pages/chi-siamo"
           }
         },
         "nav_contact": {
           "type": "nav_link",
           "settings": {
             "label": "Contatti",
-            "url": "/pages/contatti"
+            "url": "shopify://pages/contact"
           }
         },
         "svc_custom": {
