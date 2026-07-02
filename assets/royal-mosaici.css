@@ -3,7 +3,7 @@
    ===================================================== */
 
 /* -- Product type badge -- */
-/* Positioned top-right over the card image (inside .card-gallery which is position:relative) */
+/* Inside card-gallery (position:relative) → top-right over image */
 .rm-type-badge {
   position: absolute;
   top: 12px;
@@ -22,10 +22,14 @@
   white-space: nowrap;
 }
 
-/* -- Card: white background + shadow -- */
+/* -- Card: white background + stronger shadow + positioning context -- */
+/* position:relative makes this the anchor for the quick-add overlay   */
 .resource-list__item .product-card__content.product-grid__card {
+  position: relative;
   background-color: #ffffff;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.09);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 8px 32px rgba(0, 0, 0, 0.13);
 }
 
 /* -- Price: orange -- */
@@ -36,13 +40,22 @@
   font-weight: 700;
 }
 
-/* -- Quick-add button: orange filled circle, always visible -- */
+/* -- Quick-add: orange filled circle, always visible, aligned with price row -- */
+/* quick-add is now a sibling of card-gallery inside .product-card__content    */
+/* inset:0 covers the whole card; button is positioned at card bottom-right     */
+.resource-list__item .quick-add {
+  pointer-events: none;
+}
+
 .resource-list__item .quick-add__button {
   background: #e8872a !important;
   background-color: #e8872a !important;
   border-color: #e8872a !important;
   color: #ffffff !important;
   opacity: 1 !important;
+  /* Align with price row: ~10px from card bottom */
+  bottom: 10px !important;
+  right: 10px !important;
 }
 
 .resource-list__item .quick-add__button .add-to-cart-text {
