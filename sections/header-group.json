@@ -71,13 +71,19 @@
             "menu_style": "collection_images",
             "featured_products_aspect_ratio": "1 / 1",
             "featured_collections_aspect_ratio": "1 / 1",
-            "image_border_radius": 12,
+            "image_border_radius": 16,
             "navigation_bar": false,
             "background_color_navigation_bar": "{{ settings.color_palette.background }}",
             "text_color_navigation_bar": "",
             "drawer_accordion": false,
             "drawer_accordion_expand_first": false,
-            "drawer_dividers": false
+            "drawer_dividers": false,
+            "menu_page_handle_1": "personalizzazione",
+            "menu_page_image_1": "shopify://shop_images/imgi_6_photo-1643567290149-44cf808cc0bb.jpg",
+            "menu_page_handle_2": "disegno",
+            "menu_page_image_2": "shopify://shop_images/imgi_5_photo-1577744264009-eafc1067be78_1abe0a35-8be1-4399-9f7c-297e8f046504.jpg",
+            "menu_page_handle_3": "posa-in-opera",
+            "menu_page_image_3": "shopify://shop_images/imgi_8_photo-1660832617537-a50694234f58.jpg"
           },
           "blocks": {}
         }

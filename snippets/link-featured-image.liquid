@@ -12,9 +12,10 @@
 {% assign image_sizes = sizes | default: 'auto' %}
 
 {% if link.type == 'page_link' %}
-  {% if link.object.image %}
+  {%- assign page_menu_image = link.object.metafields.custom.menu_image -%}
+  {% if page_menu_image %}
     {{
-      link.object.image
+      page_menu_image
       | image_url: width: 800
       | image_tag: loading: 'lazy', class: class, sizes: image_sizes, alt: link.title
     }}

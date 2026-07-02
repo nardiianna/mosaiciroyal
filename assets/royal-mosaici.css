@@ -80,3 +80,100 @@
   color: #e8872a;
   transition: color 0.2s ease;
 }
+
+/* =====================================================
+   Mega menu Servizi — card con immagine quadrata
+   ===================================================== */
+
+/* Immagine quadrata (sovrascrive 16/9 di Horizon) */
+.mega-menu__link-image {
+  aspect-ratio: 1 / 1 !important;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Card con sfondo bianco, ombra e angoli arrotondati */
+.mega-menu__link:has(.mega-menu__link-image) {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.09);
+  padding: 0 !important;
+  padding-block: 0 !important;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.mega-menu__link:has(.mega-menu__link-image):hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  color: inherit;
+}
+
+/* Titolo centrato e in grassetto sotto l'immagine */
+.mega-menu__link:has(.mega-menu__link-image) .wrap-text {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1rem;
+  width: 100%;
+  color: var(--color-foreground);
+}
+
+/* Pannello dropdown: sfondo trasparente, box bianco solo sulle card */
+.menu-list__submenu:has(.mega-menu__link-image) {
+  background-color: transparent !important;
+}
+
+.menu-list__submenu-inner:has(.mega-menu__link-image) {
+  padding-block-start: 1rem !important;
+  padding-block-end: 1rem !important;
+  padding-inline: 1rem !important;
+  background-color: transparent;
+}
+
+/* Underlay (backdrop full-width di Horizon): rendi la zona submenu trasparente.
+   La specificità [0,2,0] batte il {% style %} inline [0,1,0] che imposta --color-submenu. */
+.header__underlay.header__underlay-open {
+  --color-submenu: transparent;
+}
+
+/* Rimuovi anche il box-shadow del pannello sottostante */
+.header__underlay.header__underlay-open::after {
+  box-shadow: none;
+}
+
+/* Sezione mega menu: non aggiungere padding extra */
+.mega-menu:has(.mega-menu__link-image) {
+  --section-padding-inline: 0px;
+}
+
+/* Grid: 3 colonne da 200px, box bianco centrato */
+.mega-menu__grid[data-menu-grid-id]:has(.mega-menu__link-image) {
+  grid-template-columns: repeat(3, 200px) !important;
+  max-width: fit-content;
+  margin-inline: auto;
+  gap: 1rem !important;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+}
+
+/* Ogni colonna: span 1 (invece di 2) */
+.mega-menu__grid:has(.mega-menu__link-image) .mega-menu__column--wide-collection-image {
+  grid-column: span 1 !important;
+}
+
+/* Lista: occupa esattamente 3 colonne */
+.mega-menu__grid:has(.mega-menu__link-image) .mega-menu__list {
+  grid-column: span 3 !important;
+  grid-template-columns: subgrid;
+}
+
+/* Rimuovi il placeholder grigio per link senza immagine */
+.mega-menu__grid:has(.mega-menu__link-image)
+  .mega-menu__column > div > .mega-menu__link:not(:has(.mega-menu__link-image))::before {
+  display: none;
+}

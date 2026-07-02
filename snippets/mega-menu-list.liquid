@@ -130,7 +130,26 @@
             -%}
           {%- endcapture -%}
 
-          {% render 'link-featured-image', link: link, class: 'mega-menu__link-image', sizes: collection_image_sizes %}
+          {%- if link.type == 'page_link' and page_link_settings -%}
+            {%- assign page_handle = link.object.handle -%}
+            {%- assign page_link_img = nil -%}
+            {%- if page_link_settings.menu_page_handle_1 == page_handle -%}
+              {%- assign page_link_img = page_link_settings.menu_page_image_1 -%}
+            {%- elsif page_link_settings.menu_page_handle_2 == page_handle -%}
+              {%- assign page_link_img = page_link_settings.menu_page_image_2 -%}
+            {%- elsif page_link_settings.menu_page_handle_3 == page_handle -%}
+              {%- assign page_link_img = page_link_settings.menu_page_image_3 -%}
+            {%- endif -%}
+            {%- if page_link_img -%}
+              {{
+                page_link_img
+                | image_url: width: 800
+                | image_tag: loading: 'lazy', class: 'mega-menu__link-image', sizes: collection_image_sizes, alt: link.title
+              }}
+            {%- endif -%}
+          {%- else -%}
+            {% render 'link-featured-image', link: link, class: 'mega-menu__link-image', sizes: collection_image_sizes %}
+          {%- endif -%}
         {% endif %}
         <span class="wrap-text">
           {{- link.title -}}
