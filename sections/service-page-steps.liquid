@@ -43,6 +43,20 @@
     color: #ffffff;
   }
 
+  .sps-steps__icon--number {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+  }
+
+  .sps-steps--boxed .sps-steps {
+    background: #f6f6f6;
+    border-radius: 12px;
+    padding: 48px 40px 40px;
+    max-width: 860px;
+  }
+
   .sps-steps__content {
     padding-top: 4px;
   }
@@ -89,36 +103,53 @@
   assign icon_tools = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
 -%}
 
-<div class="sps-steps">
+{%- assign use_numbers = false -%}
+{%- if section.settings.step_style == 'number' -%}
+  {%- assign use_numbers = true -%}
+{%- endif -%}
+
+<div class="sps-steps{% if use_numbers %} sps-steps--boxed{% endif %}">
+  {%- if section.settings.box_background -%}
+    <div style="background:#f6f6f6;border-radius:12px;padding:40px 40px 36px;max-width:860px;margin:0 auto 56px;">
+  {%- endif -%}
+
   {%- if section.settings.title != blank -%}
-    <h2 class="sps-steps__title">{{ section.settings.title }}</h2>
+    <h2 class="sps-steps__title" {% if section.settings.box_background %}style="text-align:left;"{% endif %}>{{ section.settings.title }}</h2>
   {%- endif -%}
 
   {%- if section.blocks.size > 0 -%}
     <div class="sps-steps__list">
+      {%- assign step_num = 0 -%}
       {%- for block in section.blocks -%}
         {%- if block.type == 'step' -%}
-          {%- liquid
-            case block.settings.icon
-              when 'lightbulb'
-                assign icon_svg = icon_lightbulb
-              when 'pencil'
-                assign icon_svg = icon_pencil
-              when 'palette'
-                assign icon_svg = icon_palette
-              when 'check'
-                assign icon_svg = icon_check
-              when 'star'
-                assign icon_svg = icon_star
-              when 'tools'
-                assign icon_svg = icon_tools
-              else
-                assign icon_svg = icon_pencil
-            endcase
-          -%}
+          {%- assign step_num = step_num | plus: 1 -%}
+          {%- unless use_numbers -%}
+            {%- liquid
+              case block.settings.icon
+                when 'lightbulb'
+                  assign icon_svg = icon_lightbulb
+                when 'pencil'
+                  assign icon_svg = icon_pencil
+                when 'palette'
+                  assign icon_svg = icon_palette
+                when 'check'
+                  assign icon_svg = icon_check
+                when 'star'
+                  assign icon_svg = icon_star
+                when 'tools'
+                  assign icon_svg = icon_tools
+                else
+                  assign icon_svg = icon_pencil
+              endcase
+            -%}
+          {%- endunless -%}
           <div class="sps-steps__item" {{ block.shopify_attributes }}>
             <div class="sps-steps__icon">
-              {{ icon_svg }}
+              {%- if use_numbers -%}
+                <span class="sps-steps__icon--number">{{ step_num }}</span>
+              {%- else -%}
+                {{ icon_svg }}
+              {%- endif -%}
             </div>
             <div class="sps-steps__content">
               {%- if block.settings.title != blank -%}
@@ -131,6 +162,10 @@
           </div>
         {%- endif -%}
       {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.box_background -%}
     </div>
   {%- endif -%}
 </div>
@@ -179,6 +214,22 @@
       "id": "title",
       "label": "Titolo sezione",
       "default": "Il Processo"
+    },
+    {
+      "type": "select",
+      "id": "step_style",
+      "label": "Stile cerchio",
+      "options": [
+        { "value": "icon", "label": "Icona" },
+        { "value": "number", "label": "Numero" }
+      ],
+      "default": "icon"
+    },
+    {
+      "type": "checkbox",
+      "id": "box_background",
+      "label": "Sfondo grigio (box)",
+      "default": false
     }
   ],
   "presets": [

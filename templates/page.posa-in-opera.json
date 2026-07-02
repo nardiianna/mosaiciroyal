@@ -1,0 +1,156 @@
+{
+  "sections": {
+    "hero": {
+      "type": "service-page-hero",
+      "settings": {
+        "heading": "Posa in Opera",
+        "height": 420,
+        "overlay_opacity": 50
+      }
+    },
+    "split": {
+      "type": "service-page-split",
+      "settings": {
+        "intro_text": "Un'installazione professionale è fondamentale per garantire la bellezza e la durata del mosaico. Il nostro team specializzato assicura una posa impeccabile con tecniche all'avanguardia",
+        "image_position": "left",
+        "image_width": 4,
+        "image_radius": 4,
+        "heading": "Maestria nell'Installazione",
+        "text_1": "La posa in opera è un'arte che richiede esperienza, precisione e conoscenza approfondita dei materiali. I nostri posatori specializzati vantano decenni di esperienza nell'installazione di mosaici artistici.",
+        "text_2": "Utilizziamo esclusivamente materiali certificati e tecniche professionali che garantiscono l'adesione perfetta e la durabilità nel tempo del mosaico, sia per installazioni interne che esterne."
+      }
+    },
+    "icon_cols": {
+      "type": "service-page-icon-cols",
+      "blocks": {
+        "ic1": {
+          "type": "icon_col",
+          "settings": {
+            "icon": "hammer",
+            "title": "Installazione Professionale",
+            "description": "Posa su qualsiasi superficie: pareti, pavimenti, soffitti, arredi"
+          }
+        },
+        "ic2": {
+          "type": "icon_col",
+          "settings": {
+            "icon": "shield",
+            "title": "Garanzia di Qualità",
+            "description": "Lavoro garantito con materiali certificati e tecniche professionali"
+          }
+        },
+        "ic3": {
+          "type": "icon_col",
+          "settings": {
+            "icon": "clock",
+            "title": "Puntualità",
+            "description": "Rispetto dei tempi concordati per non interferire con le tue attività"
+          }
+        }
+      },
+      "block_order": ["ic1", "ic2", "ic3"],
+      "settings": {
+        "title": "I Nostri Servizi di Posa",
+        "columns": "3"
+      }
+    },
+    "bordered_list": {
+      "type": "service-page-bordered-list",
+      "blocks": {
+        "bl1": {
+          "type": "list_item",
+          "settings": {
+            "title": "Pavimenti in Mosaico",
+            "description": "Installiamo pavimenti artistici per interni ed esterni, garantendo planarità perfetta, resistenza al calpestio e trattamenti antimacchia. Ideali per ingressi, bagni, terrazze e piscine."
+          }
+        },
+        "bl2": {
+          "type": "list_item",
+          "settings": {
+            "title": "Rivestimenti Murali",
+            "description": "Rivestiamo pareti con mosaici decorativi per cucine, bagni, docce e spazi living. Trattiamo le superfici con prodotti idrorepellenti e antimuffa dove necessario."
+          }
+        },
+        "bl3": {
+          "type": "list_item",
+          "settings": {
+            "title": "Quadri e Pannelli Artistici",
+            "description": "Installiamo opere d'arte in mosaico su qualsiasi parete, con sistemi di fissaggio sicuri e discreti. Curiamo l'illuminazione per valorizzare al meglio l'opera."
+          }
+        },
+        "bl4": {
+          "type": "list_item",
+          "settings": {
+            "title": "Elementi d'Arredo",
+            "description": "Posiamo mosaici su tavoli, piani cucina, scale, fontane e altri elementi personalizzati, con finiture protettive adeguate all'uso."
+          }
+        }
+      },
+      "block_order": ["bl1", "bl2", "bl3", "bl4"],
+      "settings": {
+        "title": "Tipologie di Installazione"
+      }
+    },
+    "steps": {
+      "type": "service-page-steps",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "icon": "check",
+            "title": "Sopralluogo Tecnico",
+            "description": "Valutiamo la superficie, verifichiamo le condizioni strutturali e definiamo il metodo di posa ottimale"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "icon": "check",
+            "title": "Preparazione Superficie",
+            "description": "Prepariamo accuratamente il supporto per garantire adesione perfetta e planarità"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "icon": "check",
+            "title": "Posa del Mosaico",
+            "description": "Installiamo il mosaico con precisione millimetrica, curando allineamenti e fughe"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "icon": "check",
+            "title": "Stuccatura e Finitura",
+            "description": "Stucchiamo le fughe con prodotti di qualità e applichiamo trattamenti protettivi"
+          }
+        },
+        "s5": {
+          "type": "step",
+          "settings": {
+            "icon": "check",
+            "title": "Pulizia e Consegna",
+            "description": "Puliamo accuratamente e consegniamo l'opera completa, fornendo istruzioni per la manutenzione"
+          }
+        }
+      },
+      "block_order": ["s1", "s2", "s3", "s4", "s5"],
+      "settings": {
+        "title": "Il Nostro Processo",
+        "step_style": "number",
+        "box_background": true
+      }
+    },
+    "cta": {
+      "type": "service-page-cta",
+      "settings": {
+        "title": "Richiedi un Preventivo",
+        "text": "Contattaci per un sopralluogo gratuito e un preventivo dettagliato per l'installazione del tuo mosaico",
+        "button_label": "Contattaci",
+        "button_url": "shopify://pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "split", "icon_cols", "bordered_list", "steps", "cta"]
+}

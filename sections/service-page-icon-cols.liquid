@@ -1,0 +1,199 @@
+{%- style -%}
+  .spic {
+    padding: 0 24px 56px;
+  }
+
+  .spic__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #f6f6f6;
+    border-radius: 12px;
+    padding: 48px 40px 40px;
+  }
+
+  .spic__title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 40px;
+  }
+
+  .spic__grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns }}, 1fr);
+    gap: 32px 24px;
+  }
+
+  .spic__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .spic__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #e8872a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .spic__icon svg {
+    width: 26px;
+    height: 26px;
+    color: #ffffff;
+  }
+
+  .spic__item-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .spic__item-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #5a5a5a;
+    margin: 0;
+  }
+
+  @media (max-width: 599px) {
+    .spic__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .spic__inner {
+      padding: 36px 20px 28px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign icon_hammer = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
+  assign icon_shield = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>'
+  assign icon_clock = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'
+  assign icon_star = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>'
+  assign icon_check = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>'
+  assign icon_pencil = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>'
+  assign icon_lightbulb = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.6-1.4 4.8-3.5 6L15 17H9l-.5-2C6.4 13.8 5 11.6 5 9a7 7 0 0 1 7-7z"/></svg>'
+-%}
+
+<div class="spic">
+  <div class="spic__inner">
+    {%- if section.settings.title != blank -%}
+      <h2 class="spic__title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="spic__grid">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'icon_col' -%}
+            {%- liquid
+              case block.settings.icon
+                when 'hammer'
+                  assign icon_svg = icon_hammer
+                when 'shield'
+                  assign icon_svg = icon_shield
+                when 'clock'
+                  assign icon_svg = icon_clock
+                when 'star'
+                  assign icon_svg = icon_star
+                when 'check'
+                  assign icon_svg = icon_check
+                when 'pencil'
+                  assign icon_svg = icon_pencil
+                when 'lightbulb'
+                  assign icon_svg = icon_lightbulb
+                else
+                  assign icon_svg = icon_check
+              endcase
+            -%}
+            <div class="spic__item" {{ block.shopify_attributes }}>
+              <div class="spic__icon">{{ icon_svg }}</div>
+              {%- if block.settings.title != blank -%}
+                <p class="spic__item-title">{{ block.settings.title }}</p>
+              {%- endif -%}
+              {%- if block.settings.description != blank -%}
+                <p class="spic__item-desc">{{ block.settings.description }}</p>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Colonne con icone",
+  "tag": "section",
+  "class": "service-page-icon-cols",
+  "blocks": [
+    {
+      "type": "icon_col",
+      "name": "Colonna",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icona",
+          "options": [
+            { "value": "hammer", "label": "Martello" },
+            { "value": "shield", "label": "Scudo" },
+            { "value": "clock", "label": "Orologio" },
+            { "value": "check", "label": "Spunta" },
+            { "value": "star", "label": "Stella" },
+            { "value": "pencil", "label": "Matita" },
+            { "value": "lightbulb", "label": "Lampadina" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titolo",
+          "default": "Titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Descrizione"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titolo sezione",
+      "default": "I Nostri Servizi"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Colonne",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Colonne con icone"
+    }
+  ]
+}
+{% endschema %}
