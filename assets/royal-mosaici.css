@@ -32,12 +32,14 @@
     0 8px 32px rgba(0, 0, 0, 0.13);
 }
 
-/* -- Price: orange -- */
+/* -- Price: orange + bigger -- */
 .resource-list__item .price__regular .price,
 .resource-list__item .price-item--sale.price,
 .resource-list__item .price-item--regular.price {
   color: #e8872a;
   font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
 }
 
 /* -- Quick-add: orange filled circle, always visible, aligned with price row -- */
@@ -53,9 +55,9 @@
   border-color: #e8872a !important;
   color: #ffffff !important;
   opacity: 1 !important;
-  /* Align with price row: ~10px from card bottom */
-  bottom: 10px !important;
-  right: 10px !important;
+  /* Align with price row: card bottom padding = 20px, button = 36px → center at ~38px from bottom */
+  bottom: 14px !important;
+  right: 14px !important;
 }
 
 .resource-list__item .quick-add__button .add-to-cart-text {
