@@ -399,7 +399,9 @@
         "section_width": "page-width",
         "horizontal_alignment": "center",
         "gap": 40,
-        "background_color": "#faf7f2",
+        "background_color": "{{ settings.color_palette.background }}",
+        "use_gradient": true,
+        "gradient_color": "#fef3c7",
         "padding-block-start": 72,
         "padding-block-end": 72
       }
@@ -580,6 +582,8 @@
         "horizontal_alignment": "center",
         "gap": 40,
         "background_color": "rgba(0,0,0,0)",
+        "use_gradient": false,
+        "gradient_color": "#fef3c7",
         "padding-block-start": 72,
         "padding-block-end": 72
       }
