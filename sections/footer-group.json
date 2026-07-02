@@ -11,189 +11,104 @@
   "type": "footer",
   "name": "Footer",
   "sections": {
-    "footer_m9NzUG": {
-      "type": "footer",
+    "royal_footer_main": {
+      "type": "royal-footer",
       "blocks": {
-        "group_H6VpwJ": {
-          "type": "group",
+        "nav_home": {
+          "type": "nav_link",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 6,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "open_in_new_tab": false,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_LWt8Pz": {
-              "type": "text",
-              "settings": {
-                "text": "<h2>Join our email list</h2>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_f9CFLH": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Get exclusive deals and early access to new products.</p>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_LWt8Pz",
-            "text_f9CFLH"
-          ]
+            "label": "Home",
+            "url": "/"
+          }
         },
-        "email_signup_crihX7": {
-          "type": "email-signup",
+        "nav_catalog": {
+          "type": "nav_link",
           "settings": {
-            "width": "fill",
-            "custom_width": 100,
-            "heading_preset": "h3",
-            "border_style": "all",
-            "input_style": "custom",
-            "border_width": 1,
-            "border_radius": 100,
-            "input_background_color": "{{ settings.color_palette.background }}",
-            "input_text_color": "{{ settings.color_palette.color1 }}",
-            "input_border_color": "{{ settings.color_palette.color2 }}",
-            "input_type_preset": "paragraph",
-            "style_class": "button-unstyled",
-            "display_type": "arrow",
-            "label": "Sign up",
-            "integrated_button": true,
-            "button_type_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "label": "Catalogo Mosaici",
+            "url": "/collections/all"
+          }
+        },
+        "nav_about": {
+          "type": "nav_link",
+          "settings": {
+            "label": "Chi Siamo",
+            "url": "/pages/chi-siamo"
+          }
+        },
+        "nav_contact": {
+          "type": "nav_link",
+          "settings": {
+            "label": "Contatti",
+            "url": "/pages/contatti"
+          }
+        },
+        "svc_custom": {
+          "type": "service_link",
+          "settings": {
+            "label": "Personalizzazione",
+            "url": "/pages/personalizzazione"
+          }
+        },
+        "svc_design": {
+          "type": "service_link",
+          "settings": {
+            "label": "Disegno e Progettazione",
+            "url": "/pages/disegno-e-progettazione"
+          }
+        },
+        "svc_install": {
+          "type": "service_link",
+          "settings": {
+            "label": "Posa in Opera",
+            "url": "/pages/posa-in-opera"
+          }
+        },
+        "policy_privacy": {
+          "type": "policy_link",
+          "settings": {
+            "label": "Privacy Policy",
+            "url": "/policies/privacy-policy"
+          }
+        },
+        "policy_cookie": {
+          "type": "policy_link",
+          "settings": {
+            "label": "Cookie Policy",
+            "url": "/policies/privacy-policy"
+          }
         }
       },
       "block_order": [
-        "group_H6VpwJ",
-        "email_signup_crihX7"
+        "nav_home",
+        "nav_catalog",
+        "nav_about",
+        "nav_contact",
+        "svc_custom",
+        "svc_design",
+        "svc_install",
+        "policy_privacy",
+        "policy_cookie"
       ],
-      "name": "t:names.footer",
       "settings": {
-        "section_width": "page-width",
-        "gap": 20,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 30,
-        "padding-block-end": 30
-      }
-    },
-    "footer_utilities_jLGE8U": {
-      "type": "footer-utilities",
-      "blocks": {
-        "footer_copyright_jweRK8": {
-          "type": "footer-copyright",
-          "settings": {
-            "show_powered_by": true,
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        },
-        "footer_policy_list_VCdnpa": {
-          "type": "footer-policy-list",
-          "settings": {
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        },
-        "social_links_Ew63Kq": {
-          "type": "social-links",
-          "settings": {
-            "facebook_url": "https://www.facebook.com/",
-            "instagram_url": "https://www.instagram.com/",
-            "youtube_url": "https://www.youtube.com/",
-            "tiktok_url": "https://www.tiktok.com/",
-            "twitter_url": "https://x.com/"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "footer_copyright_jweRK8",
-        "footer_policy_list_VCdnpa",
-        "social_links_Ew63Kq"
-      ],
-      "name": "t:names.utilities",
-      "settings": {
-        "section_width": "page-width",
-        "gap": 24,
-        "divider_thickness": 1,
-        "divider_color": "{{ settings.color_palette.color2 }}",
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 20,
-        "padding-block-end": 48
+        "background_color": "#1a1a1a",
+        "tagline": "Creazioni artigianali uniche realizzate con la tecnica del mosaico. Tradizione e arte in ogni opera.",
+        "nav_title": "Navigazione",
+        "services_title": "Servizi",
+        "newsletter_title": "Newsletter",
+        "newsletter_text": "Iscriviti per ricevere aggiornamenti su nuove collezioni e offerte esclusive",
+        "newsletter_placeholder": "La tua email",
+        "newsletter_button": "Iscriviti",
+        "contact_title": "Contatti",
+        "address": "Via Roma 123, 20121 Milano",
+        "phone": "+39 333 123 4567",
+        "email": "info@royalmosaici.it",
+        "facebook": "https://www.facebook.com/",
+        "instagram": "https://www.instagram.com/",
+        "copyright_text": "Tutti i diritti riservati."
       }
     }
   },
   "order": [
-    "footer_m9NzUG",
-    "footer_utilities_jLGE8U"
+    "royal_footer_main"
   ]
 }

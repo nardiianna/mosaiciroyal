@@ -1,0 +1,607 @@
+{%- style -%}
+  .rf {
+    background-color: {{ section.settings.background_color }};
+    color: #ffffff;
+  }
+
+  .rf__main {
+    padding-top: 72px;
+    padding-bottom: 56px;
+  }
+
+  .rf__grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1.1fr 1.1fr 2fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  @media (max-width: 1023px) {
+    .rf__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 32px;
+    }
+  }
+
+  @media (max-width: 599px) {
+    .rf__grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+  }
+
+  /* Brand column */
+  .rf__logo {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+  }
+
+  .rf__logo img {
+    max-width: 160px;
+    height: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .rf__shop-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+  }
+
+  .rf__tagline {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+    max-width: 280px;
+  }
+
+  /* Column titles */
+  .rf__col-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 20px;
+  }
+
+  /* Nav links */
+  .rf__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .rf__links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  .rf__links a:hover {
+    color: #e8872a;
+  }
+
+  /* Newsletter */
+  .rf__newsletter-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0 0 20px;
+  }
+
+  .rf__newsletter-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+
+  .rf__email-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50px;
+    padding: 12px 18px;
+    color: #ffffff;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.2s;
+    min-width: 0;
+  }
+
+  .rf__email-input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .rf__email-input:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .rf__subscribe-btn {
+    background: #e8872a;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 22px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.15s;
+    flex-shrink: 0;
+  }
+
+  .rf__subscribe-btn:hover {
+    background: #d4751e;
+    transform: scale(1.03);
+  }
+
+  /* Contact section */
+  .rf__contacts-title {
+    margin-top: 0;
+  }
+
+  .rf__contact-list {
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .rf__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .rf__contact-item svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #e8872a;
+  }
+
+  .rf__contact-item a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .rf__contact-item a:hover {
+    color: #e8872a;
+  }
+
+  /* Social icons */
+  .rf__social {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .rf__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+
+  .rf__social-link:hover {
+    border-color: #e8872a;
+    color: #e8872a;
+    background: rgba(232, 135, 42, 0.1);
+  }
+
+  .rf__social-link svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Bottom bar */
+  .rf__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px 0;
+  }
+
+  .rf__bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .rf__copyright {
+    margin: 0;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .rf__policies {
+    display: flex;
+    gap: 24px;
+  }
+
+  .rf__policies a {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .rf__policies a:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+{%- endstyle -%}
+
+<footer class="rf" role="contentinfo">
+
+  {%- comment -%} Newsletter form success/error message {%- endcomment -%}
+  {%- if form.posted_successfully? -%}
+    <div class="rf__form-success" role="status">
+      <p>{{ 'Grazie per esserti iscritto!' }}</p>
+    </div>
+  {%- endif -%}
+
+  <div class="rf__main">
+    <div class="section section--page-width">
+      <div class="rf__grid">
+
+        {%- comment -%}— Col 1: Brand —{%- endcomment -%}
+        <div class="rf__col rf__col--brand">
+          <a href="{{ routes.root_url }}" class="rf__logo" aria-label="{{ shop.name }}">
+            {%- if settings.logo -%}
+              {{- settings.logo | image_url: width: 180 | image_tag:
+                loading: 'lazy',
+                width: settings.logo.width,
+                height: settings.logo.height,
+                alt: settings.logo.alt | default: shop.name
+              -}}
+            {%- else -%}
+              <span class="rf__shop-name">{{ shop.name }}</span>
+            {%- endif -%}
+          </a>
+          {%- if section.settings.tagline != blank -%}
+            <p class="rf__tagline">{{ section.settings.tagline }}</p>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%}— Col 2: Navigation —{%- endcomment -%}
+        <div class="rf__col">
+          <h2 class="rf__col-title">{{ section.settings.nav_title }}</h2>
+          <ul class="rf__links" role="list">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'nav_link' -%}
+                <li {{ block.shopify_attributes }}>
+                  <a href="{{ block.settings.url | default: '#' }}">{{ block.settings.label }}</a>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+
+        {%- comment -%}— Col 3: Services —{%- endcomment -%}
+        <div class="rf__col">
+          <h2 class="rf__col-title">{{ section.settings.services_title }}</h2>
+          <ul class="rf__links" role="list">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'service_link' -%}
+                <li {{ block.shopify_attributes }}>
+                  <a href="{{ block.settings.url | default: '#' }}">{{ block.settings.label }}</a>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+
+        {%- comment -%}— Col 4: Newsletter + Contacts —{%- endcomment -%}
+        <div class="rf__col">
+
+          {%- comment -%} Newsletter {%- endcomment -%}
+          <h2 class="rf__col-title">{{ section.settings.newsletter_title }}</h2>
+          {%- if section.settings.newsletter_text != blank -%}
+            <p class="rf__newsletter-text">{{ section.settings.newsletter_text }}</p>
+          {%- endif -%}
+
+          {%- form 'customer', id: 'footer-newsletter-rf' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="rf__newsletter-form">
+              <label for="footer-email-rf" class="visually-hidden">Email</label>
+              <input
+                type="email"
+                id="footer-email-rf"
+                name="contact[email]"
+                placeholder="{{ section.settings.newsletter_placeholder }}"
+                class="rf__email-input"
+                aria-label="{{ section.settings.newsletter_placeholder }}"
+                required
+              >
+              <button type="submit" class="rf__subscribe-btn">
+                {{ section.settings.newsletter_button }}
+              </button>
+            </div>
+          {%- endform -%}
+
+          {%- comment -%} Contacts {%- endcomment -%}
+          <h2 class="rf__col-title rf__contacts-title">{{ section.settings.contact_title }}</h2>
+          <ul class="rf__contact-list" role="list">
+            {%- if section.settings.address != blank -%}
+              <li class="rf__contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M12 21s-8-7.5-8-12a8 8 0 0 1 16 0c0 4.5-8 12-8 12z"/>
+                  <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+                <span>{{ section.settings.address }}</span>
+              </li>
+            {%- endif -%}
+            {%- if section.settings.phone != blank -%}
+              <li class="rf__contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.28 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <a href="tel:{{ section.settings.phone | remove: ' ' }}">{{ section.settings.phone }}</a>
+              </li>
+            {%- endif -%}
+            {%- if section.settings.email != blank -%}
+              <li class="rf__contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <polyline points="2,4 12,13 22,4"/>
+                </svg>
+                <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>
+              </li>
+            {%- endif -%}
+          </ul>
+
+          {%- comment -%} Social icons {%- endcomment -%}
+          {%- if section.settings.facebook != blank or section.settings.instagram != blank -%}
+            <div class="rf__social">
+              {%- if section.settings.facebook != blank -%}
+                <a href="{{ section.settings.facebook }}" class="rf__social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                </a>
+              {%- endif -%}
+              {%- if section.settings.instagram != blank -%}
+                <a href="{{ section.settings.instagram }}" class="rf__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+                  </svg>
+                </a>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%}— Bottom bar —{%- endcomment -%}
+  <div class="rf__bottom">
+    <div class="section section--page-width">
+      <div class="rf__bottom-inner">
+        <p class="rf__copyright">
+          &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ section.settings.copyright_text }}
+        </p>
+        <nav class="rf__policies" aria-label="Policy links">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'policy_link' -%}
+              <a href="{{ block.settings.url | default: '#' }}" {{ block.shopify_attributes }}>
+                {{ block.settings.label }}
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </nav>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+{% schema %}
+{
+  "name": "Royal Footer",
+  "tag": "div",
+  "class": "royal-footer-wrapper",
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "blocks": [
+    {
+      "type": "nav_link",
+      "name": "Link navigazione",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Etichetta",
+          "default": "Link"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    },
+    {
+      "type": "service_link",
+      "name": "Link servizio",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Etichetta",
+          "default": "Servizio"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    },
+    {
+      "type": "policy_link",
+      "name": "Link policy",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Etichetta",
+          "default": "Policy"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Colore sfondo",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "Brand"
+    },
+    {
+      "type": "textarea",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Creazioni artigianali uniche realizzate con la tecnica del mosaico. Tradizione e arte in ogni opera."
+    },
+    {
+      "type": "header",
+      "content": "Navigazione"
+    },
+    {
+      "type": "text",
+      "id": "nav_title",
+      "label": "Titolo colonna navigazione",
+      "default": "Navigazione"
+    },
+    {
+      "type": "header",
+      "content": "Servizi"
+    },
+    {
+      "type": "text",
+      "id": "services_title",
+      "label": "Titolo colonna servizi",
+      "default": "Servizi"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Titolo newsletter",
+      "default": "Newsletter"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter_text",
+      "label": "Testo newsletter",
+      "default": "Iscriviti per ricevere aggiornamenti su nuove collezioni e offerte esclusive"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Placeholder email",
+      "default": "La tua email"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button",
+      "label": "Testo bottone",
+      "default": "Iscriviti"
+    },
+    {
+      "type": "header",
+      "content": "Contatti"
+    },
+    {
+      "type": "text",
+      "id": "contact_title",
+      "label": "Titolo contatti",
+      "default": "Contatti"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Indirizzo",
+      "default": "Via Roma 123, 20121 Milano"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Telefono",
+      "default": "+39 333 123 4567"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "info@royalmosaici.it"
+    },
+    {
+      "type": "header",
+      "content": "Social"
+    },
+    {
+      "type": "url",
+      "id": "facebook",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "header",
+      "content": "Bottom bar"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Testo copyright",
+      "default": "Tutti i diritti riservati."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Royal Footer"
+    }
+  ]
+}
+{% endschema %}
