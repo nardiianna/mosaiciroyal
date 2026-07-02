@@ -27,6 +27,11 @@
     padding: 0 48px 72px;
   }
 
+  {%- if section.settings.image_position == 'right' -%}
+  .spsp__image-wrap { order: 2; }
+  .spsp__text { order: 1; }
+  {%- endif -%}
+
   .spsp__image-wrap img {
     width: 100%;
     height: auto;
@@ -139,6 +144,16 @@
     {
       "type": "header",
       "content": "Immagine e testo"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Posizione immagine",
+      "options": [
+        { "value": "left", "label": "Sinistra" },
+        { "value": "right", "label": "Destra" }
+      ],
+      "default": "left"
     },
     {
       "type": "image_picker",

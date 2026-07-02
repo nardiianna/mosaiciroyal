@@ -1,0 +1,105 @@
+{%- style -%}
+  .spcards {
+    padding: 0 24px 56px;
+  }
+
+  .spcards__grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns }}, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .spcards__card {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 32px 28px;
+  }
+
+  .spcards__card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 14px;
+    line-height: 1.3;
+  }
+
+  .spcards__card-desc {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #5a5a5a;
+    margin: 0;
+  }
+
+  @media (max-width: 599px) {
+    .spcards__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+{%- endstyle -%}
+
+<div class="spcards">
+  {%- if section.blocks.size > 0 -%}
+    <div class="spcards__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'card' -%}
+          <div class="spcards__card" {{ block.shopify_attributes }}>
+            {%- if block.settings.title != blank -%}
+              <h3 class="spcards__card-title">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <p class="spcards__card-desc">{{ block.settings.description }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Cards griglia",
+  "tag": "section",
+  "class": "service-page-cards",
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titolo",
+          "default": "Titolo card"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Descrizione",
+          "default": "Descrizione della card"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Colonne",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" }
+      ],
+      "default": "2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cards griglia"
+    }
+  ]
+}
+{% endschema %}
