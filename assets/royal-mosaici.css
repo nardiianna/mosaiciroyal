@@ -1,0 +1,67 @@
+/* =====================================================
+   Royal Mosaici — custom product card styles
+   ===================================================== */
+
+/* -- Product type badge -- */
+/* Positioned top-right over the card image (inside .card-gallery which is position:relative) */
+.rm-type-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #e8872a;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  z-index: 10;
+  pointer-events: none;
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* -- Card: white background + shadow -- */
+.resource-list__item .product-card__content.product-grid__card {
+  background-color: #ffffff;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.09);
+}
+
+/* -- Price: orange -- */
+.resource-list__item .price__regular .price,
+.resource-list__item .price-item--sale.price,
+.resource-list__item .price-item--regular.price {
+  color: #e8872a;
+  font-weight: 700;
+}
+
+/* -- Quick-add button: orange filled circle, always visible -- */
+.resource-list__item .quick-add__button {
+  background: #e8872a !important;
+  background-color: #e8872a !important;
+  border-color: #e8872a !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.resource-list__item .quick-add__button .add-to-cart-text {
+  background: #e8872a !important;
+  background-color: #e8872a !important;
+}
+
+/* Hide text label — icon-only circle */
+.resource-list__item .quick-add__button .add-to-cart-text__content {
+  display: none !important;
+}
+
+/* Keep icon white */
+.resource-list__item .quick-add__button .svg-wrapper svg {
+  color: #ffffff;
+}
+
+/* -- Product title: turn orange on hover -- */
+.resource-list__item product-card:is(:hover, :focus-within) [ref='productTitleLink'] p {
+  color: #e8872a;
+  transition: color 0.2s ease;
+}

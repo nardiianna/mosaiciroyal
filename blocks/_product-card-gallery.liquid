@@ -26,6 +26,9 @@
         </div>
       {%- endif -%}
     </div>
+    {%- if product.type != blank -%}
+      <div class="rm-type-badge" aria-label="{{ product.type }}">{{ product.type }}</div>
+    {%- endif -%}
     {%  if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add', product: product, section_id: section.id %}
     {% endif %}
