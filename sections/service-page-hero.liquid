@@ -1,0 +1,111 @@
+{%- style -%}
+  .sph {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: {{ section.settings.height }}px;
+  }
+
+  .sph__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .sph__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
+  }
+
+  .sph__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .sph__heading {
+    color: #ffffff;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+    margin: 0;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  }
+{%- endstyle -%}
+
+<div class="sph">
+  {%- if section.settings.image != blank -%}
+    {{- section.settings.image
+      | image_url: width: 1920
+      | image_tag:
+        class: 'sph__img',
+        loading: 'eager',
+        fetchpriority: 'high',
+        widths: '600, 900, 1200, 1500, 1920',
+        sizes: '100vw',
+        alt: section.settings.image.alt | default: section.settings.heading
+    -}}
+  {%- else -%}
+    <div class="sph__img" style="background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);"></div>
+  {%- endif -%}
+
+  <div class="sph__overlay"></div>
+
+  <div class="sph__content">
+    <h1 class="sph__heading">{{ section.settings.heading }}</h1>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero servizio",
+  "tag": "section",
+  "class": "service-page-hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Immagine di sfondo"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titolo",
+      "default": "Titolo servizio"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "min": 200,
+      "max": 700,
+      "step": 20,
+      "unit": "px",
+      "label": "Altezza sezione",
+      "default": 420
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "Opacità overlay scuro",
+      "default": 50
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero servizio"
+    }
+  ]
+}
+{% endschema %}

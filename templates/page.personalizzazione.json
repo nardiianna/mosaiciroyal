@@ -1,61 +1,84 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "hero": {
+      "type": "service-page-hero",
+      "settings": {
+        "heading": "Personalizzazione",
+        "height": 420,
+        "overlay_opacity": 50
+      }
+    },
+    "split": {
+      "type": "service-page-split",
+      "settings": {
+        "intro_text": "Creiamo mosaici completamente personalizzati secondo le tue esigenze, trasformando le tue idee in opere d'arte uniche e irripetibili",
+        "image_width": 4,
+        "image_radius": 4,
+        "heading": "Il Tuo Mosaico su Misura",
+        "text_1": "Ogni cliente ha gusti e necessità uniche. Il nostro servizio di personalizzazione ti permette di creare un mosaico che rispecchia perfettamente la tua visione artistica e si integra armoniosamente con il tuo ambiente.",
+        "text_2": "Dalla scelta dei colori alla selezione dei materiali, dalla dimensione al soggetto rappresentato, ogni aspetto può essere personalizzato per soddisfare le tue preferenze."
+      }
+    },
+    "features": {
+      "type": "service-page-features",
       "blocks": {
-        "heading": {
-          "type": "text",
-          "name": "Title",
+        "f1": {
+          "type": "feature_item",
           "settings": {
-            "text": "<h1>{{ closest.page.title }}</h1>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-primary--family)",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "title": "Consultazione Iniziale",
+            "description": "Incontro per comprendere le tue esigenze e visioni"
+          }
         },
-        "page-content": {
-          "type": "page-content",
-          "settings": {},
-          "blocks": {}
+        "f2": {
+          "type": "feature_item",
+          "settings": {
+            "title": "Progetto su Misura",
+            "description": "Creazione di bozzetti dettagliati del tuo mosaico"
+          }
+        },
+        "f3": {
+          "type": "feature_item",
+          "settings": {
+            "title": "Scelta Materiali",
+            "description": "Selezione guidata tra vetri, marmi e pietre naturali"
+          }
+        },
+        "f4": {
+          "type": "feature_item",
+          "settings": {
+            "title": "Realizzazione Artigianale",
+            "description": "Lavorazione completamente manuale da maestri artigiani"
+          }
+        },
+        "f5": {
+          "type": "feature_item",
+          "settings": {
+            "title": "Dimensioni Personalizzate",
+            "description": "Dal piccolo formato al pannello murale di grandi dimensioni"
+          }
+        },
+        "f6": {
+          "type": "feature_item",
+          "settings": {
+            "title": "Assistenza Completa",
+            "description": "Supporto in ogni fase del progetto fino alla consegna"
+          }
         }
       },
-      "block_order": [
-        "heading",
-        "page-content"
-      ],
+      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"],
       "settings": {
-        "content_direction": "column",
-        "gap": 32,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 40,
-        "padding-block-end": 80
+        "title": "Cosa Offriamo"
+      }
+    },
+    "cta": {
+      "type": "service-page-cta",
+      "settings": {
+        "title": "Richiedi un Preventivo",
+        "text": "Contattaci per discutere del tuo progetto personalizzato e ricevere un preventivo gratuito senza impegno",
+        "button_label": "Contattaci",
+        "button_url": "shopify://pages/contact"
       }
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["hero", "split", "features", "cta"]
 }
