@@ -1,0 +1,160 @@
+{%- style -%}
+  .about-method-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .about-method-{{ section.id }} .about-method__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  @media (max-width: 749px) {
+    .about-method-{{ section.id }} .about-method__grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  .about-method-{{ section.id }} .about-method__image {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 480px;
+  }
+
+  .about-method-{{ section.id }} .about-method__image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .about-method-{{ section.id }} .about-method__heading {
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    font-weight: 700;
+    color: var(--color-foreground);
+    margin: 0 0 24px;
+  }
+
+  .about-method-{{ section.id }} .about-method__paragraph {
+    color: var(--color-foreground);
+    line-height: 1.8;
+    margin: 0 0 16px;
+  }
+
+  .about-method-{{ section.id }} .about-method__paragraph:last-child {
+    margin-bottom: 0;
+  }
+{%- endstyle -%}
+
+<div class="section-background"></div>
+<div class="section section--page-width about-method-{{ section.id }}">
+  <div class="about-method__grid">
+
+    {%- if section.settings.image -%}
+      <div class="about-method__image">
+        {{- section.settings.image | image_url: width: 900 | image_tag:
+          loading: 'lazy',
+          widths: '400, 600, 900',
+          sizes: '(min-width: 750px) 45vw, 100vw',
+          alt: section.settings.image.alt | default: section.settings.heading
+        -}}
+      </div>
+    {%- endif -%}
+
+    <div class="about-method__content">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="about-method__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.paragraph_1 != blank -%}
+        <p class="about-method__paragraph">{{ section.settings.paragraph_1 }}</p>
+      {%- endif -%}
+      {%- if section.settings.paragraph_2 != blank -%}
+        <p class="about-method__paragraph">{{ section.settings.paragraph_2 }}</p>
+      {%- endif -%}
+      {%- if section.settings.paragraph_3 != blank -%}
+        <p class="about-method__paragraph">{{ section.settings.paragraph_3 }}</p>
+      {%- endif -%}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Chi siamo - Metodo",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Immagine"
+    },
+    {
+      "type": "header",
+      "content": "Testo"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titolo",
+      "default": "Il Nostro Metodo"
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_1",
+      "label": "Paragrafo 1",
+      "default": "Il processo creativo inizia con un'attenta fase di progettazione, dove ascoltiamo le esigenze del cliente e traduciamo le sue idee in bozzetti dettagliati."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_2",
+      "label": "Paragrafo 2",
+      "default": "Segue la selezione dei materiali, un momento cruciale dove scegliamo le tessere più adatte per colore, texture e luminosità. Ogni materiale viene selezionato per garantire non solo bellezza estetica ma anche durevolezza nel tempo."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_3",
+      "label": "Paragrafo 3",
+      "default": "La realizzazione vera e propria richiede settimane di lavoro paziente e certosino, dove ogni tessera viene tagliata, modellata e posizionata con estrema precisione. Il risultato finale è un'opera d'arte unica e irripetibile."
+    },
+    {
+      "type": "header",
+      "content": "Spaziatura"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding superiore",
+      "min": 0,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding inferiore",
+      "min": 0,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Chi siamo - Metodo"
+    }
+  ]
+}
+{% endschema %}

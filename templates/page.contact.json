@@ -1,0 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "contact_header": {
+      "type": "contact-page-header",
+      "name": "Contatti - Header",
+      "settings": {
+        "heading": "Contatti",
+        "subheading": "Siamo a tua disposizione per rispondere a qualsiasi domanda e per fornirti tutte le informazioni di cui hai bisogno",
+        "gradient_color": "#fef3c7",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "contact_body": {
+      "type": "contact-page-body",
+      "name": "Contatti - Body",
+      "settings": {
+        "image": "shopify://shop_images/imgi_6_photo-1643567560585-2f769e995c91.jpg",
+        "info_heading": "Informazioni",
+        "address": "Via Roma 123\n20121 Milano (MI)\nItalia",
+        "phone": "+39 333 123 4567",
+        "email_address": "info@royalmosaici.it",
+        "hours": "Lunedì - Venerdì: 9:00 - 18:00\nSabato: 9:00 - 13:00\nDomenica: Chiuso",
+        "showroom_title": "Showroom",
+        "showroom_text": "Visita il nostro showroom su appuntamento per vedere da vicino le nostre creazioni e discutere del tuo progetto personalizzato.",
+        "form_heading": "Scrivici",
+        "button_label": "Invia Messaggio",
+        "accent_color": "#e8872a",
+        "padding_top": 64,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "contact_header",
+    "contact_body"
+  ]
+}

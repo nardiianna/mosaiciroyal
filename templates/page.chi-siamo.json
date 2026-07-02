@@ -1,0 +1,157 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_chi_siamo": {
+      "type": "hero",
+      "blocks": {
+        "page_title": {
+          "type": "text",
+          "name": "Titolo pagina",
+          "settings": {
+            "text": "<h1>Chi Siamo</h1>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h1",
+            "font": "var(--font-heading--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "#ffffff",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "page_title"
+      ],
+      "name": "Hero Chi Siamo",
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/imgi_5_photo-1577744264009-eafc1067be78.jpg",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "full-width",
+        "section_height": "medium",
+        "section_height_custom": 50,
+        "background_color": "rgba(0,0,0,0)",
+        "toggle_overlay": true,
+        "overlay_color": "#12121266",
+        "overlay_style": "solid",
+        "gradient_direction": "to bottom",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "about_story": {
+      "type": "about-story",
+      "name": "La Nostra Storia",
+      "settings": {
+        "heading": "La Nostra Storia",
+        "accent_color": "#e8872a",
+        "paragraph_1": "Royal Mosaici nasce dalla passione per l'arte del mosaico e dalla volontà di preservare e rinnovare questa antica tradizione artigianale. Da oltre vent'anni creiamo opere uniche che uniscono maestria tecnica e sensibilità artistica.",
+        "paragraph_2": "Ogni nostra creazione è il risultato di un lavoro meticoloso, dove ogni tessera viene selezionata e posizionata a mano per dare vita a composizioni armoniose e raffinate. Utilizziamo esclusivamente materiali di prima qualità: vetri veneziani, marmi pregiati, pietre naturali e smalti artigianali.",
+        "paragraph_3": "Il nostro team è composto da maestri mosaicisti con decenni di esperienza, affiancati da giovani artisti che portano nuove visioni e tecniche contemporanee. Questa fusione tra tradizione e innovazione ci permette di realizzare opere che rispettano l'arte antica del mosaico pur mantenendo un'estetica moderna e attuale.",
+        "padding_top": 80,
+        "padding_bottom": 64
+      }
+    },
+    "about_values": {
+      "type": "about-values",
+      "blocks": {
+        "value_1": {
+          "type": "value_item",
+          "name": "Eccellenza Artigianale",
+          "settings": {
+            "icon": "award",
+            "heading": "Eccellenza Artigianale",
+            "text": "Ogni opera è realizzata con la massima cura e attenzione ai dettagli, seguendo le tecniche tradizionali del mosaico"
+          }
+        },
+        "value_2": {
+          "type": "value_item",
+          "name": "Esperienza Pluriennale",
+          "settings": {
+            "icon": "team",
+            "heading": "Esperienza Pluriennale",
+            "text": "Il nostro team vanta oltre 20 anni di esperienza nella creazione e installazione di mosaici artistici"
+          }
+        },
+        "value_3": {
+          "type": "value_item",
+          "name": "Passione e Dedizione",
+          "settings": {
+            "icon": "heart",
+            "heading": "Passione e Dedizione",
+            "text": "Ogni progetto è seguito con passione dalla progettazione alla realizzazione, per garantire risultati eccellenti"
+          }
+        }
+      },
+      "block_order": [
+        "value_1",
+        "value_2",
+        "value_3"
+      ],
+      "name": "I Nostri Valori",
+      "settings": {
+        "background_color": "#f5f5f5",
+        "icon_background": "#e8872a",
+        "icon_color": "#ffffff",
+        "columns": "3",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "about_method": {
+      "type": "about-method",
+      "name": "Il Nostro Metodo",
+      "settings": {
+        "image": "shopify://shop_images/imgi_6_photo-1643567560585-2f769e995c91.jpg",
+        "heading": "Il Nostro Metodo",
+        "paragraph_1": "Il processo creativo inizia con un'attenta fase di progettazione, dove ascoltiamo le esigenze del cliente e traduciamo le sue idee in bozzetti dettagliati.",
+        "paragraph_2": "Segue la selezione dei materiali, un momento cruciale dove scegliamo le tessere più adatte per colore, texture e luminosità. Ogni materiale viene selezionato per garantire non solo bellezza estetica ma anche durevolezza nel tempo.",
+        "paragraph_3": "La realizzazione vera e propria richiede settimane di lavoro paziente e certosino, dove ogni tessera viene tagliata, modellata e posizionata con estrema precisione. Il risultato finale è un'opera d'arte unica e irripetibile.",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "hero_chi_siamo",
+    "about_story",
+    "about_values",
+    "about_method"
+  ]
+}

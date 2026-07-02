@@ -1,0 +1,457 @@
+{%- style -%}
+  .contact-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .contact-section-{{ section.id }} .contact__header {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+
+  .contact-section-{{ section.id }} .contact__heading {
+    color: {{ section.settings.heading_color }};
+    margin-bottom: 16px;
+  }
+
+  .contact-section-{{ section.id }} .contact__subheading {
+    color: {{ section.settings.text_color }};
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .contact-section-{{ section.id }} .contact__body {
+    display: grid;
+    grid-template-columns: {% if section.settings.image %}1fr 1fr{% else %}1fr{% endif %};
+    gap: 48px;
+    align-items: stretch;
+    {% unless section.settings.image %}
+    max-width: 680px;
+    margin-inline: auto;
+    {% endunless %}
+  }
+
+  @media (max-width: 749px) {
+    .contact-section-{{ section.id }} .contact__body {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact-section-{{ section.id }} .contact__image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    min-height: 300px;
+  }
+
+  .contact-section-{{ section.id }} .contact__image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .contact-section-{{ section.id }} .contact__form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-section-{{ section.id }} .contact__name-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 480px) {
+    .contact-section-{{ section.id }} .contact__name-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact-section-{{ section.id }} .contact__label {
+    color: {{ section.settings.text_color }};
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .contact-section-{{ section.id }} .contact__input,
+  .contact-section-{{ section.id }} .contact__textarea {
+    width: 100%;
+    background-color: {{ section.settings.input_background }};
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: {{ section.settings.text_color }};
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .contact-section-{{ section.id }} .contact__input:focus,
+  .contact-section-{{ section.id }} .contact__textarea:focus {
+    border-color: {{ section.settings.button_color }};
+  }
+
+  .contact-section-{{ section.id }} .contact__textarea {
+    min-height: 130px;
+    resize: vertical;
+  }
+
+  .contact-section-{{ section.id }} .contact__submit {
+    width: 100%;
+    background-color: {{ section.settings.button_color }};
+    color: {{ section.settings.button_text_color }};
+    border: none;
+    border-radius: 50px;
+    padding: 16px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: opacity 0.2s;
+    font-family: inherit;
+  }
+
+  .contact-section-{{ section.id }} .contact__submit:hover {
+    opacity: 0.88;
+  }
+
+  .contact-section-{{ section.id }} .contact__info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .contact-section-{{ section.id }} .contact__info-item {
+    background-color: {{ section.settings.input_background }};
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: {{ section.settings.text_color }};
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    word-break: break-all;
+  }
+
+  .contact-section-{{ section.id }} .contact__info-item svg {
+    flex-shrink: 0;
+    fill: none;
+    stroke: {{ section.settings.button_color }};
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .contact-section-{{ section.id }} .contact__success {
+    background: rgba(76, 175, 80, 0.15);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    color: #81c784;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .contact-section-{{ section.id }} .contact__error {
+    background: rgba(244, 67, 54, 0.12);
+    border: 1px solid rgba(244, 67, 54, 0.3);
+    color: #ef9a9a;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+{%- endstyle -%}
+
+<div class="section-background" style="background-color: {{ section.settings.background_color }};"></div>
+<div class="section section--page-width contact-section-{{ section.id }}">
+
+  <div class="contact__inner">
+
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="contact__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="contact__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="contact__subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="contact__body">
+
+      {%- if section.settings.image -%}
+        <div class="contact__image">
+          {{- section.settings.image | image_url: width: 800 | image_tag:
+            loading: 'lazy',
+            widths: '400, 600, 800',
+            sizes: '(min-width: 750px) 45vw, 100vw',
+            alt: section.settings.image.alt | default: section.settings.heading
+          -}}
+        </div>
+      {%- endif -%}
+
+      <div class="contact__form-wrapper">
+        {%- form 'contact', id: 'ContactSection-{{ section.id }}' -%}
+
+          {%- if form.posted_successfully? -%}
+            <p class="contact__success">
+              Messaggio inviato con successo! Ti risponderemo al più presto.
+            </p>
+          {%- endif -%}
+
+          {%- if form.errors -%}
+            <div class="contact__error">
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+
+          <div class="contact__form-fields">
+
+            <div class="contact__name-row">
+              <div>
+                <label class="contact__label" for="ContactSection-{{ section.id }}-nome">Nome</label>
+                <input
+                  class="contact__input"
+                  type="text"
+                  id="ContactSection-{{ section.id }}-nome"
+                  name="contact[nome]"
+                  autocomplete="given-name"
+                  value="{% if customer %}{{ customer.first_name }}{% endif %}"
+                  placeholder=""
+                >
+              </div>
+              <div>
+                <label class="contact__label" for="ContactSection-{{ section.id }}-cognome">Cognome</label>
+                <input
+                  class="contact__input"
+                  type="text"
+                  id="ContactSection-{{ section.id }}-cognome"
+                  name="contact[cognome]"
+                  autocomplete="family-name"
+                  value="{% if customer %}{{ customer.last_name }}{% endif %}"
+                  placeholder=""
+                >
+              </div>
+            </div>
+
+            <div>
+              <label class="contact__label" for="ContactSection-{{ section.id }}-email">Email</label>
+              <input
+                class="contact__input"
+                type="email"
+                id="ContactSection-{{ section.id }}-email"
+                name="contact[email]"
+                autocomplete="email"
+                autocorrect="off"
+                autocapitalize="off"
+                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                required
+                placeholder=""
+              >
+            </div>
+
+            <div>
+              <label class="contact__label" for="ContactSection-{{ section.id }}-telefono">Telefono</label>
+              <input
+                class="contact__input"
+                type="tel"
+                id="ContactSection-{{ section.id }}-telefono"
+                name="contact[telefono]"
+                autocomplete="tel"
+                placeholder=""
+              >
+            </div>
+
+            <div>
+              <label class="contact__label" for="ContactSection-{{ section.id }}-messaggio">Messaggio</label>
+              <textarea
+                class="contact__textarea"
+                id="ContactSection-{{ section.id }}-messaggio"
+                name="contact[body]"
+                rows="5"
+                placeholder=""
+              >{% if form.body %}{{ form.body }}{% endif %}</textarea>
+            </div>
+
+            <button type="submit" class="contact__submit">
+              {{ section.settings.button_label | default: 'Invia Messaggio' }}
+            </button>
+
+          </div>
+
+        {%- endform -%}
+
+        {%- if section.settings.phone != blank or section.settings.email_address != blank -%}
+          <div class="contact__info-grid">
+            {%- if section.settings.phone != blank -%}
+              <div class="contact__info-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                {{ section.settings.phone }}
+              </div>
+            {%- endif -%}
+            {%- if section.settings.email_address != blank -%}
+              <div class="contact__info-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                {{ section.settings.email_address }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Sezione contatti",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titolo",
+      "default": "Contattaci"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Sottotitolo",
+      "default": "Hai un progetto in mente? Scrivici per ricevere maggiori informazioni o per richiedere un preventivo personalizzato"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Immagine"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Testo bottone invio",
+      "default": "Invia Messaggio"
+    },
+    {
+      "type": "header",
+      "content": "Informazioni di contatto"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Telefono",
+      "default": "+39 333 123 4567"
+    },
+    {
+      "type": "text",
+      "id": "email_address",
+      "label": "Email",
+      "default": "info@royalmosaici.it"
+    },
+    {
+      "type": "header",
+      "content": "Colori"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Sfondo sezione",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Colore titolo",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Colore testo e label",
+      "default": "#b0b0b0"
+    },
+    {
+      "type": "color",
+      "id": "input_background",
+      "label": "Sfondo campi",
+      "default": "#2d2d2d"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Colore bottone",
+      "default": "#E8872A"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Testo bottone",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Spaziatura"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding superiore",
+      "min": 0,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding inferiore",
+      "min": 0,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sezione contatti",
+      "settings": {
+        "heading": "Contattaci",
+        "subheading": "Hai un progetto in mente? Scrivici per ricevere maggiori informazioni o per richiedere un preventivo personalizzato",
+        "button_label": "Invia Messaggio",
+        "phone": "+39 333 123 4567",
+        "email_address": "info@royalmosaici.it",
+        "background_color": "#1a1a1a",
+        "heading_color": "#ffffff",
+        "text_color": "#b0b0b0",
+        "input_background": "#2d2d2d",
+        "button_color": "#E8872A",
+        "button_text_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  ]
+}
+{% endschema %}

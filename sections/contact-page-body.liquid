@@ -1,0 +1,488 @@
+{%- style -%}
+  .contact-page-body-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  @media (max-width: 899px) {
+    .contact-page-body-{{ section.id }} .cpb__grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  /* Left column */
+  .contact-page-body-{{ section.id }} .cpb__image {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    height: 320px;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__info-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-foreground);
+    margin: 0 0 16px;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__info-card {
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__info-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: {{ section.settings.accent_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__info-icon svg {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__info-label {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-foreground);
+    margin: 0 0 4px;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__info-value {
+    font-size: 0.9rem;
+    color: var(--color-foreground);
+    opacity: 0.75;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__showroom {
+    background-color: #fef9ef;
+    border-left: 4px solid {{ section.settings.accent_color }};
+    border-radius: 0 12px 12px 0;
+    padding: 20px 20px 20px 20px;
+    margin-top: 4px;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__showroom-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-foreground);
+    margin: 0 0 8px;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__showroom-text {
+    font-size: 0.9rem;
+    color: var(--color-foreground);
+    opacity: 0.75;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Right column - form */
+  .contact-page-body-{{ section.id }} .cpb__form-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-foreground);
+    margin: 0 0 24px;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 479px) {
+    .contact-page-body-{{ section.id }} .cpb__row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__field-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-foreground);
+    margin-bottom: 8px;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__input,
+  .contact-page-body-{{ section.id }} .cpb__textarea {
+    width: 100%;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--color-foreground);
+    background: #ffffff;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__input:focus,
+  .contact-page-body-{{ section.id }} .cpb__textarea:focus {
+    border-color: {{ section.settings.accent_color }};
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__submit {
+    width: 100%;
+    background-color: {{ section.settings.accent_color }};
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 18px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.2s;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__submit:hover {
+    opacity: 0.88;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__success {
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    color: #2e7d32;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .contact-page-body-{{ section.id }} .cpb__error {
+    background: rgba(244, 67, 54, 0.08);
+    border: 1px solid rgba(244, 67, 54, 0.25);
+    color: #c62828;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+{%- endstyle -%}
+
+<div class="section-background"></div>
+<div class="section section--page-width contact-page-body-{{ section.id }}">
+  <div class="cpb__grid">
+
+    {%- comment -%} LEFT COLUMN {%- endcomment -%}
+    <div class="cpb__left">
+
+      {%- if section.settings.image -%}
+        <div class="cpb__image">
+          {{- section.settings.image | image_url: width: 900 | image_tag:
+            loading: 'lazy',
+            widths: '400, 600, 900',
+            sizes: '(min-width: 900px) 45vw, 100vw',
+            alt: section.settings.image.alt | default: 'Immagine contatti'
+          -}}
+        </div>
+      {%- endif -%}
+
+      <h2 class="cpb__info-heading">{{ section.settings.info_heading | default: 'Informazioni' }}</h2>
+
+      <div class="cpb__info-list">
+
+        {%- if section.settings.address != blank -%}
+          <div class="cpb__info-card">
+            <div class="cpb__info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cpb__info-label">Indirizzo</p>
+              <p class="cpb__info-value">{{ section.settings.address | newline_to_br }}</p>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.phone != blank -%}
+          <div class="cpb__info-card">
+            <div class="cpb__info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cpb__info-label">Telefono</p>
+              <p class="cpb__info-value">{{ section.settings.phone }}</p>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.email_address != blank -%}
+          <div class="cpb__info-card">
+            <div class="cpb__info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cpb__info-label">Email</p>
+              <p class="cpb__info-value">{{ section.settings.email_address }}</p>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.hours != blank -%}
+          <div class="cpb__info-card">
+            <div class="cpb__info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div>
+              <p class="cpb__info-label">Orari</p>
+              <p class="cpb__info-value">{{ section.settings.hours | newline_to_br }}</p>
+            </div>
+          </div>
+        {%- endif -%}
+
+      </div>
+
+      {%- if section.settings.showroom_title != blank or section.settings.showroom_text != blank -%}
+        <div class="cpb__showroom">
+          {%- if section.settings.showroom_title != blank -%}
+            <p class="cpb__showroom-title">{{ section.settings.showroom_title }}</p>
+          {%- endif -%}
+          {%- if section.settings.showroom_text != blank -%}
+            <p class="cpb__showroom-text">{{ section.settings.showroom_text }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+    </div>
+
+    {%- comment -%} RIGHT COLUMN — form {%- endcomment -%}
+    <div class="cpb__right">
+
+      <h2 class="cpb__form-heading">{{ section.settings.form_heading | default: 'Scrivici' }}</h2>
+
+      {%- form 'contact', id: 'ContactPageForm-{{ section.id }}' -%}
+
+        {%- if form.posted_successfully? -%}
+          <p class="cpb__success">Messaggio inviato con successo! Ti risponderemo al più presto.</p>
+        {%- endif -%}
+        {%- if form.errors -%}
+          <div class="cpb__error">{{ form.errors | default_errors }}</div>
+        {%- endif -%}
+
+        <div class="cpb__form-fields">
+
+          <div class="cpb__row">
+            <div>
+              <label class="cpb__field-label" for="CPBNome-{{ section.id }}">Nome *</label>
+              <input class="cpb__input" type="text" id="CPBNome-{{ section.id }}" name="contact[nome]" autocomplete="given-name" value="{% if customer %}{{ customer.first_name }}{% endif %}" required>
+            </div>
+            <div>
+              <label class="cpb__field-label" for="CPBCognome-{{ section.id }}">Cognome *</label>
+              <input class="cpb__input" type="text" id="CPBCognome-{{ section.id }}" name="contact[cognome]" autocomplete="family-name" value="{% if customer %}{{ customer.last_name }}{% endif %}" required>
+            </div>
+          </div>
+
+          <div>
+            <label class="cpb__field-label" for="CPBEmail-{{ section.id }}">Email *</label>
+            <input class="cpb__input" type="email" id="CPBEmail-{{ section.id }}" name="contact[email]" autocomplete="email" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" required>
+          </div>
+
+          <div>
+            <label class="cpb__field-label" for="CPBTelefono-{{ section.id }}">Telefono</label>
+            <input class="cpb__input" type="tel" id="CPBTelefono-{{ section.id }}" name="contact[telefono]" autocomplete="tel">
+          </div>
+
+          <div>
+            <label class="cpb__field-label" for="CPBOggetto-{{ section.id }}">Oggetto *</label>
+            <input class="cpb__input" type="text" id="CPBOggetto-{{ section.id }}" name="contact[oggetto]" required>
+          </div>
+
+          <div>
+            <label class="cpb__field-label" for="CPBMessaggio-{{ section.id }}">Messaggio *</label>
+            <textarea class="cpb__textarea" id="CPBMessaggio-{{ section.id }}" name="contact[body]" rows="6" required>{% if form.body %}{{ form.body }}{% endif %}</textarea>
+          </div>
+
+          <button type="submit" class="cpb__submit">
+            {{ section.settings.button_label | default: 'Invia Messaggio' }}
+          </button>
+
+        </div>
+
+      {%- endform -%}
+
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contatti - Body",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Immagine sinistra"
+    },
+    {
+      "type": "header",
+      "content": "Informazioni di contatto"
+    },
+    {
+      "type": "text",
+      "id": "info_heading",
+      "label": "Titolo colonna sinistra",
+      "default": "Informazioni"
+    },
+    {
+      "type": "textarea",
+      "id": "address",
+      "label": "Indirizzo",
+      "default": "Via Roma 123\n20121 Milano (MI)\nItalia"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Telefono",
+      "default": "+39 333 123 4567"
+    },
+    {
+      "type": "text",
+      "id": "email_address",
+      "label": "Email",
+      "default": "info@royalmosaici.it"
+    },
+    {
+      "type": "textarea",
+      "id": "hours",
+      "label": "Orari",
+      "default": "Lunedì - Venerdì: 9:00 - 18:00\nSabato: 9:00 - 13:00\nDomenica: Chiuso"
+    },
+    {
+      "type": "header",
+      "content": "Card Showroom"
+    },
+    {
+      "type": "text",
+      "id": "showroom_title",
+      "label": "Titolo showroom",
+      "default": "Showroom"
+    },
+    {
+      "type": "textarea",
+      "id": "showroom_text",
+      "label": "Testo showroom",
+      "default": "Visita il nostro showroom su appuntamento per vedere da vicino le nostre creazioni e discutere del tuo progetto personalizzato."
+    },
+    {
+      "type": "header",
+      "content": "Form contatto"
+    },
+    {
+      "type": "text",
+      "id": "form_heading",
+      "label": "Titolo form",
+      "default": "Scrivici"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Testo bottone",
+      "default": "Invia Messaggio"
+    },
+    {
+      "type": "header",
+      "content": "Stile"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Colore accento",
+      "default": "#E8872A"
+    },
+    {
+      "type": "header",
+      "content": "Spaziatura"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding superiore",
+      "min": 0,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding inferiore",
+      "min": 0,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contatti - Body"
+    }
+  ]
+}
+{% endschema %}
