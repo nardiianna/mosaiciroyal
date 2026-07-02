@@ -22,29 +22,47 @@
   white-space: nowrap;
 }
 
-/* -- Card: white background + stronger shadow + positioning context -- */
-/* position:relative makes this the anchor for the quick-add overlay   */
-.resource-list__item .product-card__content.product-grid__card {
+/* -- Card: angoli arrotondati, sfondo bianco, ombra, clipping immagine -- */
+.resource-list__item .product-card__content {
   position: relative;
   background-color: #ffffff;
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.06),
-    0 8px 32px rgba(0, 0, 0, 0.13);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
 }
 
-/* -- Price: orange + bigger -- */
+/* Reset border-radius della card-gallery → la card esterna fa già il clipping */
+.resource-list__item .product-card__content .card-gallery {
+  --resource-card-corner-radius: 0px;
+  border-radius: 0 !important;
+}
+
+.resource-list__item .product-card__content .card-gallery img,
+.resource-list__item .product-card__content .card-gallery video {
+  border-radius: 0 !important;
+}
+
+/* -- Text blocks inside card: side padding so text doesn't touch card edges -- */
+.resource-list__item .product-card__content .text-block {
+  padding-inline: 14px !important;
+}
+
+/* Price: bottom padding (last visible block before card bottom) */
+.resource-list__item product-price {
+  padding-block-end: 14px !important;
+}
+
+/* -- Price: orange, readable size -- */
 .resource-list__item .price__regular .price,
 .resource-list__item .price-item--sale.price,
 .resource-list__item .price-item--regular.price {
   color: #e8872a;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   line-height: 1.2;
 }
 
-/* -- Quick-add: orange filled circle, always visible, aligned with price row -- */
-/* quick-add is now a sibling of card-gallery inside .product-card__content    */
-/* inset:0 covers the whole card; button is positioned at card bottom-right     */
+/* -- Quick-add: orange filled circle -- */
 .resource-list__item .quick-add {
   pointer-events: none;
 }
@@ -55,7 +73,6 @@
   border-color: #e8872a !important;
   color: #ffffff !important;
   opacity: 1 !important;
-  /* Align with price row: card bottom padding = 20px, button = 36px → center at ~38px from bottom */
   bottom: 14px !important;
   right: 14px !important;
 }
@@ -65,12 +82,11 @@
   background-color: #e8872a !important;
 }
 
-/* Hide text label — icon-only circle */
+/* Icon-only circle (no text label) */
 .resource-list__item .quick-add__button .add-to-cart-text__content {
   display: none !important;
 }
 
-/* Keep icon white */
 .resource-list__item .quick-add__button .svg-wrapper svg {
   color: #ffffff;
 }
@@ -79,6 +95,22 @@
 .resource-list__item product-card:is(:hover, :focus-within) [ref='productTitleLink'] p {
   color: #e8872a;
   transition: color 0.2s ease;
+}
+
+/* =====================================================
+   Mobile — collezione: spazio laterale + quick-add
+   ===================================================== */
+@media screen and (max-width: 749px) {
+  /* Spazio laterale alla griglia */
+  .product-grid-container .collection-wrapper {
+    padding-inline: 10px;
+  }
+
+  /* Bottone aggiungi al carrello: sempre visibile su mobile */
+  .resource-list__item .quick-add__button {
+    display: flex !important;
+    opacity: 1 !important;
+  }
 }
 
 /* =====================================================
