@@ -1,8 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "service-page-hero",
       "settings": {
+        "image": "shopify://shop_images/imgi_8_photo-1660832617537-a50694234f58.jpg",
         "heading": "Posa in Opera",
         "height": 420,
         "overlay_opacity": 50
@@ -13,6 +23,7 @@
       "settings": {
         "intro_text": "Un'installazione professionale è fondamentale per garantire la bellezza e la durata del mosaico. Il nostro team specializzato assicura una posa impeccabile con tecniche all'avanguardia",
         "image_position": "left",
+        "image": "shopify://shop_images/imgi_6_photo-1713542507051-c07185996d6b.jpg",
         "image_width": 4,
         "image_radius": 4,
         "heading": "Maestria nell'Installazione",
@@ -48,7 +59,11 @@
           }
         }
       },
-      "block_order": ["ic1", "ic2", "ic3"],
+      "block_order": [
+        "ic1",
+        "ic2",
+        "ic3"
+      ],
       "settings": {
         "title": "I Nostri Servizi di Posa",
         "columns": "3"
@@ -86,7 +101,12 @@
           }
         }
       },
-      "block_order": ["bl1", "bl2", "bl3", "bl4"],
+      "block_order": [
+        "bl1",
+        "bl2",
+        "bl3",
+        "bl4"
+      ],
       "settings": {
         "title": "Tipologie di Installazione"
       }
@@ -135,11 +155,17 @@
           }
         }
       },
-      "block_order": ["s1", "s2", "s3", "s4", "s5"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ],
       "settings": {
         "title": "Il Nostro Processo",
-        "step_style": "number",
-        "box_background": true
+        "step_style": "icon",
+        "box_background": false
       }
     },
     "cta": {
@@ -152,5 +178,12 @@
       }
     }
   },
-  "order": ["hero", "split", "icon_cols", "bordered_list", "steps", "cta"]
+  "order": [
+    "hero",
+    "split",
+    "icon_cols",
+    "bordered_list",
+    "steps",
+    "cta"
+  ]
 }

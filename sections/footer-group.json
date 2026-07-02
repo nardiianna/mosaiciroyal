@@ -46,21 +46,21 @@
           "type": "service_link",
           "settings": {
             "label": "Personalizzazione",
-            "url": "/pages/personalizzazione"
+            "url": "shopify://pages/personalizzazione"
           }
         },
         "svc_design": {
           "type": "service_link",
           "settings": {
             "label": "Disegno e Progettazione",
-            "url": "/pages/disegno-e-progettazione"
+            "url": "shopify://pages/disegno"
           }
         },
         "svc_install": {
           "type": "service_link",
           "settings": {
             "label": "Posa in Opera",
-            "url": "/pages/posa-in-opera"
+            "url": "shopify://pages/posa-in-opera"
           }
         },
         "policy_privacy": {
