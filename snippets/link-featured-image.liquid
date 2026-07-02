@@ -11,7 +11,15 @@
 
 {% assign image_sizes = sizes | default: 'auto' %}
 
-{% if link.type == 'collection_link' %}
+{% if link.type == 'page_link' %}
+  {% if link.object.image %}
+    {{
+      link.object.image
+      | image_url: width: 800
+      | image_tag: loading: 'lazy', class: class, sizes: image_sizes, alt: link.title
+    }}
+  {% endif %}
+{% elsif link.type == 'collection_link' %}
   {% if link.object.featured_image %}
     {{
       link.object.featured_image
